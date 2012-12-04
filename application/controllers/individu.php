@@ -10,8 +10,9 @@ class Individu extends MY_Controller {
 
 	public function index()
 	{
-		
-		$data["content"]["1"] = $this->load->view('individu/senarai', "", TRUE);
+		$data["level"] ="individu";
+		$data["content"]["1"] = $this->load->view('individu/senarai', $data, TRUE);
+
 		$this->load->view('layout', $data);
 	}
 

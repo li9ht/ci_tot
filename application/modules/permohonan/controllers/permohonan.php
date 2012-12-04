@@ -16,10 +16,10 @@ class Permohonan extends MX_Controller {
 		return $this->load->view('baru',$data,TRUE);
 	}
 
-	public function senarai($status){
+	public function senarai($status,$level){
 		$data["status"] = $status;
-
-		$data["senarai_mohon"] = $this->mohon_m->get_status("1");
+		$data["level"] = $level;
+		$data["senarai_mohon"] = $this->mohon_m->get_status($status);
 
 		return $this->load->view('senarai_permohonan', $data, TRUE);
 	}
@@ -30,6 +30,15 @@ class Permohonan extends MX_Controller {
 		$mohon = $this->mohon_m->get_bil($bil);
 		$data["mohon"] = $mohon[0];
 		return $this->load->view('detail', $data, TRUE);
+	}
+
+	public function ubah_status($bil,$status){
+
+		$permohonan = array(
+			"status" => $status 
+		);
+		$this->db->update('permohonan', $permohonan, "bil =".$bil);
+
 	}
 
 

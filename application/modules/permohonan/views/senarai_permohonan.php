@@ -14,7 +14,7 @@
 	<tbody>
 		<?php foreach ($senarai_mohon as $mohon): ?>
 			<tr>
-			<td> <a href="<?php echo base_url() ?>individu/detail/<?php echo $mohon->bil ?> " title="" class="btn"> <?php echo $mohon->bil ?></a></td>
+			<td> <a href="<?php echo base_url().$level ?>/detail/<?php echo $mohon->bil ?> " title="" class="btn"> <?php echo $mohon->bil ?></a></td>
 			<td><?php echo $mohon->ukmper ?></td>
 			<td><?php echo $mohon->nama ?></td>
 			<td><?php echo $mohon->dari ?></td>
